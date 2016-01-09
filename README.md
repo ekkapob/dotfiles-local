@@ -14,15 +14,18 @@ At configuration, set `Key Repeat`
 - `180` ms to Delay until repeat
 - `50` ms to Key repeat 
 
-##### Install Seil (if want to map `caps lock` to `ESC`, useful for vi key
-bindings)
-
+##### Install Seil
+(if want to map `caps lock` to `ESC`, useful for vi key bindings) 
 https://pqrs.org/osx/karabiner/seil.html.en
 
 ##### Install MacVim
 https://github.com/macvim-dev/macvim/releases
 
 There is `mvim` in dmg, drap into `/usr/local/bin`
+
+##### Install Pathogen
+https://github.com/tpope/vim-pathogen
+
 ##### Install the_silver_searcher for faster code search
 ```
 $ brew install the_silver_searcher
@@ -55,3 +58,6 @@ $ cd
 $ git clone git@github.com:thoughtbot/dotfiles.git
 $ env RCRC=$HOME/dotfiles/rcrc rcup
 ````
+
+##### (Optional) VIM Theme
+http://ethanschoonover.com/solarized/vim-colors-solarized

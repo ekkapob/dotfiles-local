@@ -138,3 +138,5 @@ nnoremap <silent> <C-h> :<C-u>call <SID>JumpWithCreate('h')<CR>
 nnoremap <silent> <C-j> :<C-u>call <SID>JumpWithCreate('j')<CR>
 nnoremap <silent> <C-k> :<C-u>call <SID>JumpWithCreate('k')<CR>
 nnoremap <silent> <C-l> :<C-u>call <SID>JumpWithCreate('l')<CR>
+
+execute pathogen#infect()
