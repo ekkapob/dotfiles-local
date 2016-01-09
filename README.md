@@ -16,6 +16,7 @@ At configuration, set `Key Repeat`
 
 ##### Install Seil (if want to map `caps lock` to `ESC`, useful for vi key
 bindings)
+
 https://pqrs.org/osx/karabiner/seil.html.en
 
 ##### Install MacVim
