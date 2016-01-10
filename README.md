@@ -26,6 +26,9 @@ There is `mvim` in dmg, drap into `/usr/local/bin`
 ##### Install Pathogen
 https://github.com/tpope/vim-pathogen
 
+- Install essentials plugins like NERDTree, CtrlP
+http://vimawesome.com/
+
 ##### Install the_silver_searcher for faster code search
 ```
 $ brew install the_silver_searcher
