@@ -64,3 +64,5 @@ $ env RCRC=$HOME/dotfiles/rcrc rcup
 
 ##### (Optional) VIM Theme
 http://ethanschoonover.com/solarized/vim-colors-solarized
+##### Map Caps Lock to Ctrl & Esc for Vim speed
+http://blog.paulrugelhiatt.com/hacks/apple/2014/11/06/optimize-osx-keymappings-for-web-development.html
