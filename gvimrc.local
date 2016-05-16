@@ -1,17 +1,1 @@
-" MacVim Settings
-syntax on
-filetype plugin indent on
-
-" colorscheme solarized
-set bg=light
-" if strftime("%H") < 18
-"  set bg=light
-" else
-"  set bg=dark
-"endif
-
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
-set guifont=Menlo\ Regular:h15
+set guifont=Menlo\ Regular:h16

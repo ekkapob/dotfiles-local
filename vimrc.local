@@ -1,122 +1,9 @@
-" Enable searching in project with :find
-set path=$PWD/**
-
-" Turn off error indications (e.g. the bell sound)
-set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
-
-map <Leader>f :e <C-R>=expand("%:p:h") . "/" <CR>
-" Auto-indent in a way that makes sense
-set autoindent
-
-if executable('ag')
- set grepprg=ag\ --nogroup\ --nocolor
- let g:ctrlp_working_path_mode = 'ra'
- let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
- let g:ctrlp_use_caching = 0
-endif
-
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-nnoremap \ :Ag<SPACE>
-
-" Reload the vimrc file
-nmap <silent> <leader>v :so $MYVIMRC<CR>
-
-" Scroll window to optimal spot for work (5 lines below top of screen)
-nmap <silent> <leader>TT z<CR>15<C-y>
-
-" Dodge a couple keystrokes on vim commands
-nnoremap ; :
-nnoremap <leader>f ;
-
-" Put latest yanked text (bypass latest deleted text in default buffer)
-noremap YP "0P
-nnoremap <expr> Yp getline('.') =~? '\v^\s+$' ? "\"_dd\"0P=`]" : "\"0p=p`]"
-
-" highlight search results
-" set hlsearch
-
-" Search settings
 set ignorecase
 set smartcase
-
-" Line Numbers
 set relativenumber
 
-" Full line tab completion using Supertab
-imap <C-l> <C-x><C-l>
-
-" Paste from clipboard
-map <leader>p :set paste<cr>:r !pbpaste<cr>:set nopaste<cr>
-map <leader>bb :Gblame<CR>
-" Faster saving
-noremap <Leader>w :up<CR>
-" Faster quit
-noremap <Leader>q :up<CR>:q<CR>
-" Faster search access
-noremap <Leader>S :Ag<Space>
-noremap <Leader>R :%s/
-noremap <Leader>RV :%s/\%V
-" Break out of insert mode and save
-inoremap <Esc> <Esc><Esc>:up<CR>
-" Navigate lines
-map <leader>l $
-map <leader>h ^
-" Don't skip over second part of a broken line
-nnoremap j gj
-nnoremap k gk
-" Adjust lines
-map <leader>k kJ
-map Di ddO
-" Adds whitespace above or below with alt j/k
-nnoremap <silent>Wj :set paste<CR>m`o<Esc>``:set nopaste<CR>
-nnoremap <silent>Wk :set paste<CR>m`O<Esc>``:set nopaste<CR>
-nnoremap <silent>WW :Ag <C-r><C-w><CR>
-" Paste over lines with whitespace (common when using snipmate)
-nnoremap <expr> p getline('.') =~? '\v^\s+$' ? "\"_ddP=`]" : "p=`]"
-
-" Insert last ditch effort in integration tests
-nnoremap sos osave_and_open_screenshot<ESC>
-" Clear search matches
-map <leader>c :nohlsearch<CR>
-" RSpec.vim settings and mappings
-let g:rspec_command = 'time spring rspec {spec}'
-map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>ss :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-" Enter Explore faster
-map <Leader>e :Explore<CR>
-
-"Ensure focused split is largest in window
-set winwidth=84
-set winheight=5
-set winminheight=5
-set winheight=999
-
-"folding settings
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
-set foldlevel=1         "this is just what i use
-
-" Don't add the comment prefix when I hit enter or o/O on a comment line.
-set formatoptions-=or
-
-runtime macros/matchit.vim
-
-" Settings for vim-session
-let g:session_autosave='no'
-let g:session_autoload='no'
-" Settings for syntastic
-let g:syntastic_html_checkers=['']
-let g:syntastic_mode_map = {
-      \ "mode": "active",
-      \ "passive_filetypes": ["haml", "scss", "sass"] }
-
-" Settings for ctrlp
-" let g:ctrlp_follow_symlinks = 3
+syntax on
+colorscheme onedark
 
 " Navigate windows with auto-create if navigating at edge of windows
 function! s:GotoNextWindow( direction )
@@ -139,11 +26,26 @@ function! s:JumpWithCreate( direction )
     execute 'wincmd' a:direction
   endif
 endfunction
-
-au BufNewFile,BufRead *.raml set filetype=yaml
 nnoremap <silent> <C-h> :<C-u>call <SID>JumpWithCreate('h')<CR>
 nnoremap <silent> <C-j> :<C-u>call <SID>JumpWithCreate('j')<CR>
 nnoremap <silent> <C-k> :<C-u>call <SID>JumpWithCreate('k')<CR>
 nnoremap <silent> <C-l> :<C-u>call <SID>JumpWithCreate('l')<CR>
 
-execute pathogen#infect()
+" Faster saving
+noremap <Leader>w :up<CR>
+" Faster quit
+noremap <Leader>q :up<CR>:q<CR>
+" Enter Explore faster
+map <Leader>e :Explore<CR>
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
