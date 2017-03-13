@@ -1,7 +1,15 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="me"
+export ZSH_THEME="my"
 source $ZSH/oh-my-zsh.sh
 
 eval "$(rbenv init -)"
 
 export PATH=$PATH:./node_modules/.bin
+
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/goprojects
+export PATH=$PATH:$GOPATH/bin
+
+export GOPRJ=$GOPATH/src/github.com/ekkapob/saucony
+
+set -o vi

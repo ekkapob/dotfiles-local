@@ -10,3 +10,4 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'isRuslan/vim-es6'
+Plug 'fatih/vim-go'

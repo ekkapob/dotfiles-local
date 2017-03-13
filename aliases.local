@@ -3,3 +3,9 @@ alias sr='./bin/local_server'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gd='g diff'
 alias gc='g co'
+
+# RAILS
+alias rtd='RAILS_ENV=test rake db:drop db:create db:migrate'
+
+# GO migrate
+alias mg='migrate -url postgres://saucony_admin:sauconyrocks@localhost:5432/saucony?sslmode=disable -path ./database/migrations'

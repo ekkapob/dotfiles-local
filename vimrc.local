@@ -49,3 +49,8 @@ nnoremap \ :Ag<SPACE>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let g:ctrlp_working_path_mode = 'ra'
+
+let g:go_fmt_command = "goimports"
+nnoremap <silent> <Leader>r :GoRun<CR>
