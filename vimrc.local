@@ -54,3 +54,5 @@ let g:ctrlp_working_path_mode = 'ra'
 
 let g:go_fmt_command = "goimports"
 nnoremap <silent> <Leader>r :GoRun<CR>
+
+let g:neocomplete#enable_at_startup = 1

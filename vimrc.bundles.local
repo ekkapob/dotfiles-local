@@ -11,3 +11,6 @@ Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'isRuslan/vim-es6'
 Plug 'fatih/vim-go'
+Plug 'ervandew/supertab'
+Plug 'shougo/neocomplete.vim'
+
