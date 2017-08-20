@@ -11,3 +11,4 @@ alias kr='pkill -9 rails; pkill -9 ruby'
 
 # GO migrate
 alias mg='migrate -url postgres://saucony_admin:sauconyrocks@localhost:5432/saucony?sslmode=disable -path ./database/migrations'
+

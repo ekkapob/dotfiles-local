@@ -10,6 +10,6 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/goprojects
 export PATH=$PATH:$GOPATH/bin
 
-export GOPRJ=$GOPATH/src/github.com/ekkapob/saucony
+export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
 
 set -o vi

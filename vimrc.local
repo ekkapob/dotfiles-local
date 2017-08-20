@@ -56,3 +56,6 @@ let g:go_fmt_command = "goimports"
 nnoremap <silent> <Leader>r :GoRun<CR>
 
 let g:neocomplete#enable_at_startup = 1
+let g:go_metalinter_autosave = 0
+let g:go_metalinter_autosave_enabled = ['errcheck']
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
