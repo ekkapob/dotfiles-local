@@ -3,6 +3,7 @@ export ZSH_THEME="my"
 source $ZSH/oh-my-zsh.sh
 
 eval "$(rbenv init -)"
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 export PATH=$PATH:./node_modules/.bin
 

@@ -4,6 +4,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gd='g diff'
 alias gc='g co'
 alias server="python -m SimpleHTTPServer 8000"
+alias ll="ls -lha"
 
 # RAILS
 alias rtd='RAILS_ENV=test rake db:drop db:create db:migrate'
