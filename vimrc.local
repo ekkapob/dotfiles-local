@@ -59,3 +59,6 @@ let g:neocomplete#enable_at_startup = 1
 let g:go_metalinter_autosave = 0
 let g:go_metalinter_autosave_enabled = ['errcheck']
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+
+let g:pymode_python = 'python3'
+set updatetime=100

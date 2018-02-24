@@ -4,7 +4,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gd='g diff'
 alias gc='g co'
 alias server="python -m SimpleHTTPServer 8000"
-alias ll="ls -lha"
+alias ll="ls -lah"
 
 # RAILS
 alias rtd='RAILS_ENV=test rake db:drop db:create db:migrate'
@@ -13,3 +13,7 @@ alias kr='pkill -9 rails; pkill -9 ruby'
 # GO migrate
 alias mg='migrate -url postgres://saucony_admin:sauconyrocks@localhost:5432/saucony?sslmode=disable -path ./database/migrations'
 
+alias rm_ds="find . -name '.DS_Store' -type f -delete"
+alias todos='fgrep -rn "TODO:" app config spec | while read -r line ; do
+    echo "  * $line"
+done'
