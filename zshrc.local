@@ -8,8 +8,8 @@ export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 export PATH=$PATH:./node_modules/.bin
 
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOPATH/bin
 export GOPATH=$HOME/goprojects
+export PATH=$PATH:$GOPATH/bin
 
 export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
 

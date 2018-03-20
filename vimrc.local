@@ -1,9 +1,50 @@
 set ignorecase
 set smartcase
-set relativenumber
+set number relativenumber
 
 syntax on
 colorscheme onedark
+
+" Leader
+let mapleader = " "
+
+" Faster saving
+noremap <Leader>w :up<CR>
+
+" Faster quit
+noremap <Leader>q :up<CR>:q<CR>
+
+" Enter Explore faster
+map <Leader>e :Explore<CR>
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+set incsearch     " do incremental searching
+set laststatus=2  " Always display the status line
+
+nnoremap <silent> <esc> :nohlsearch<Bar>:echo<CR>
+nnoremap S :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+
+" Set no blinking cursor
+set guicursor+=n-v-c:blinkon0
+
+" Make it obvious where 80 characters is
+set textwidth=80
+set colorcolumn=+1
+
+" Highlight trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Navigate windows with auto-create if navigating at edge of windows
 function! s:GotoNextWindow( direction )
@@ -31,34 +72,20 @@ nnoremap <silent> <C-j> :<C-u>call <SID>JumpWithCreate('j')<CR>
 nnoremap <silent> <C-k> :<C-u>call <SID>JumpWithCreate('k')<CR>
 nnoremap <silent> <C-l> :<C-u>call <SID>JumpWithCreate('l')<CR>
 
-" Faster saving
-noremap <Leader>w :up<CR>
-" Faster quit
-noremap <Leader>q :up<CR>:q<CR>
-" Enter Explore faster
-map <Leader>e :Explore<CR>
-
+" bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 " bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let g:ctrlp_working_path_mode = 'ra'
-
-let g:go_fmt_command = "goimports"
-nnoremap <silent> <Leader>r :GoRun<CR>
-
-let g:neocomplete#enable_at_startup = 1
-let g:go_metalinter_autosave = 0
-let g:go_metalinter_autosave_enabled = ['errcheck']
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-
-let g:pymode_python = 'python3'
-set updatetime=100
+" command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
