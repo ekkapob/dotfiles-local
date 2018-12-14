@@ -2,14 +2,15 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="my"
 source $ZSH/oh-my-zsh.sh
 
-eval "$(rbenv init -)"
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+# eval "$(rbenv init -)"
+# export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
 
 export PATH=$PATH:./node_modules/.bin
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/goprojects
 export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/.rbenv/shims:$PATH
 
 export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
 

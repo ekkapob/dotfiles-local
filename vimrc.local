@@ -33,7 +33,8 @@ set laststatus=2  " Always display the status line
 set splitbelow
 set splitright
 
-nnoremap <silent> <esc> :nohlsearch<Bar>:echo<CR>
+set hlsearch
+nnoremap <silent> <space> :nohlsearch<Bar>:echo<CR>
 nnoremap S :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 
 " Set no blinking cursor
@@ -112,3 +113,8 @@ let g:deoplete#enable_at_startup = 1
 
 " Set Vim Fugitive to do vertical on GDiff
 set diffopt+=vertical
+filetype plugin on
+
+" Disable Bell
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
