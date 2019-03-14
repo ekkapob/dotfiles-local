@@ -2,8 +2,12 @@ set ignorecase
 set smartcase
 set number relativenumber
 
+set pyxversion=3
+set encoding=utf-8
+
 syntax on
-colorscheme onedark
+" colorscheme onedark
+color dracula
 
 " Leader
 let mapleader = " "

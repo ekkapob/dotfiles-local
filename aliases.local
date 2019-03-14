@@ -2,6 +2,7 @@ alias e='mvim'
 alias n='nvim'
 alias sr='./bin/local_server'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glr="gl --tags --branches --remotes"
 alias gd='g diff'
 alias gc='g co'
 alias server="python -m SimpleHTTPServer 8000"

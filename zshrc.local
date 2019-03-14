@@ -15,5 +15,10 @@ export PATH=$HOME/.rbenv/shims:$PATH
 export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
 
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
+#
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+eval "$(rbenv init -)"
 
 set -o vi
