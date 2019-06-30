@@ -113,7 +113,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 set encoding=utf-8
-let g:deoplete#enable_at_startup = 1
 
 " Set Vim Fugitive to do vertical on GDiff
 set diffopt+=vertical
