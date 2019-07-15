@@ -21,7 +21,11 @@ https://pqrs.org/osx/karabiner/seil.html.en
 ##### Install MacVim
 https://github.com/macvim-dev/macvim/releases
 
-There is `mvim` in dmg, drap into `/usr/local/bin`
+Create a link for mvim `command`
+```
+$ cd /usr/local/bin
+$ ln -s /Applications/MacVim.app/Contents/bin/mvim mvim
+```
 
 ##### Install Pathogen
 https://github.com/tpope/vim-pathogen
@@ -42,6 +46,14 @@ $ brew install rcm
 ````
 ##### Install Thoughtbot dotfiles
 https://github.com/thoughtbot/dotfiles
+Comment Thoughtbot Vim bundlers
+```
+" Define bundles via Github repos
+" Plug 'tpope/vim-rhubarb'
+" Plug 'tpope/vim-surround'
+" Plug 'vim-scripts/tComment'
+...
+```
 
 **Attention:**
 
@@ -66,3 +78,9 @@ $ env RCRC=$HOME/dotfiles/rcrc rcup
 http://ethanschoonover.com/solarized/vim-colors-solarized
 ##### Map Caps Lock to Ctrl & Esc for Vim speed
 http://blog.paulrugelhiatt.com/hacks/apple/2014/11/06/optimize-osx-keymappings-for-web-development.html
+
+##### Issues and Solutions
+```
+$ brew install neovim
+$ pip3 install pynvim
+```
