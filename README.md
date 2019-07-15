@@ -46,6 +46,7 @@ $ brew install rcm
 ````
 ##### Install Thoughtbot dotfiles
 https://github.com/thoughtbot/dotfiles
+
 Comment Thoughtbot Vim bundlers
 ```
 " Define bundles via Github repos
