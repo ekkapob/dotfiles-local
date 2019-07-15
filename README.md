@@ -37,6 +37,10 @@ http://vimawesome.com/
 ```
 $ brew install the_silver_searcher
 ```
+
+##### Install the Fuzzy Search
+https://github.com/junegunn/fzf
+
 ##### Install dotfiles essential tools
 ````
 $ brew update
