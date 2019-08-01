@@ -12,6 +12,7 @@ Plug 'mxw/vim-jsx'
 Plug 'honza/vim-snippets'
 Plug 'mfukar/robotframework-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'rust-lang/rust.vim'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -31,3 +32,5 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 
 let g:go_fmt_command = "goimports"
 let g:go_def_mode = "gopls"
+
+let g:rustfmt_autosave = 1
