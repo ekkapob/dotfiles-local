@@ -9,7 +9,7 @@ export PATH=$PATH:./node_modules/.bin
 
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/goprojects
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:$HOME/.cargo/bin
 export PATH=$HOME/.rbenv/shims:$PATH
 
 export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
@@ -21,4 +21,7 @@ source $(brew --prefix nvm)/nvm.sh
 
 eval "$(rbenv init -)"
 
+export LC_ALL=en_US.UTF-8
 set -o vi
+
+plugins=(docker docker-compose)
