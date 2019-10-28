@@ -24,6 +24,8 @@ set splitright
 
 call plug#begin()
 
+Plug 'neomake/neomake'
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
@@ -120,6 +122,25 @@ match ExtraWhitespace /\s\+$/
 let g:deoplete#enable_at_startup = 1
 let g:go_fmt_command = "goimports"
 let g:go_def_mode = "gopls"
+
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#unimported_packages = 1
+
+" Run NeoMake on read and write operations
+autocmd! BufReadPost,BufWritePost * Neomake
+
+" Disable inherited syntastic
+let g:syntastic_mode_map = {
+  \ "mode": "passive",
+  \ "active_filetypes": [],
+  \ "passive_filetypes": [] }
+
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
+
+let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+set autoread
+au FocusGained * :checktime
