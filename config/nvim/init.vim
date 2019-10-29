@@ -130,17 +130,15 @@ let g:deoplete#sources#go#unimported_packages = 1
 " Run NeoMake on read and write operations
 autocmd! BufReadPost,BufWritePost * Neomake
 
-" Disable inherited syntastic
-let g:syntastic_mode_map = {
-  \ "mode": "passive",
-  \ "active_filetypes": [],
-  \ "passive_filetypes": [] }
-
 let g:neomake_serialize = 1
 let g:neomake_serialize_abort_on_error = 1
 
-let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
+let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
+let g:neomake_go_enabled_makers = [ 'go', 'gometalinter' ]
 
 set autoread
 au FocusGained * :checktime
