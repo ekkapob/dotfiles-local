@@ -124,3 +124,6 @@ autocmd GUIEnter * set visualbell t_vb=
 
 set guifont=Menlo\ Regular:h16
 set rtp+=/usr/local/opt/fzf
+
+" Auto sync files with realtime changes
+set autoread

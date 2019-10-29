@@ -15,6 +15,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'mfukar/robotframework-vim'
+Plug 'neomake/neomake'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -31,6 +32,7 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 " from https://github.com/mdempsky/gocode
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#unimported_packages = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_def_mode = "gopls"
