@@ -9,6 +9,8 @@ augroup END
 set textwidth=80
 set colorcolumn=+1
 
+set termguicolors
+
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -38,8 +40,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 
 call plug#end()
 

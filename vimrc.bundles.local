@@ -15,7 +15,8 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug '/usr/local/opt/fzf'
 Plug 'mfukar/robotframework-vim'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
+Plug 'epilande/vim-react-snippets'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -24,17 +25,26 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
 set completeopt+=noselect
 let g:deoplete#enable_at_startup = 1
 
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 " from https://github.com/mdempsky/gocode
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#unimported_packages = 1
 
+au filetype go inoremap <buffer> . .<C-x><C-o>
+
 let g:go_fmt_command = "goimports"
-let g:go_def_mode = "gopls"
 
 let g:rustfmt_autosave = 1
+let g:rustfmt_tab_spaces = 2
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+let g:ale_enabled = 0

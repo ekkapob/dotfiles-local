@@ -8,6 +8,10 @@ alias gc='g co'
 alias server="python -m SimpleHTTPServer 8000"
 alias ll="ls -lah"
 
+# Docker
+alias dk='docker'
+alias dkc='docker-compose'
+
 # RAILS
 alias rtd='RAILS_ENV=test rake db:drop db:create db:migrate'
 alias kr='pkill -9 rails; pkill -9 ruby'
