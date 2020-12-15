@@ -1,7 +1,7 @@
 Plug 'SirVer/ultisnips'
 " Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
@@ -13,7 +13,7 @@ Plug 'honza/vim-snippets'
 Plug 'mfukar/robotframework-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'mfukar/robotframework-vim'
 " Plug 'neomake/neomake'
 Plug 'epilande/vim-react-snippets'
@@ -48,3 +48,8 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 let g:ale_enabled = 0
+
+" Rg finds files at git root
+nnoremap <silent> <Leader>f :Rg<CR>
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..', 'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)

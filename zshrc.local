@@ -18,14 +18,14 @@ export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
 #
 export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
-export ANDROID_SDK=/Users/ek/Library/Android/sdk
-export PATH=/Users/ek/Library/Android/sdk/platform-tools:$PATH
-
-eval "$(rbenv init -)"
+# source $(brew --prefix nvm)/nvm.sh
 
 export LC_ALL=en_US.UTF-8
 set -o vi
 
 plugins=(docker docker-compose)
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
