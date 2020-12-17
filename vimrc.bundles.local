@@ -13,8 +13,15 @@ Plug 'honza/vim-snippets'
 Plug 'mfukar/robotframework-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+"
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" use this only when post-hook failed
+" ref: https://github.com/junegunn/fzf.vim/issues/1008
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 Plug 'mfukar/robotframework-vim'
+Plug 'yggdroot/indentline'
 " Plug 'neomake/neomake'
 Plug 'epilande/vim-react-snippets'
 

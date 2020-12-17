@@ -40,6 +40,7 @@ $ brew install the_silver_searcher
 
 ##### Install the Fuzzy Search
 https://github.com/junegunn/fzf
+https://github.com/BurntSushi/ripgrep
 
 ##### Install dotfiles essential tools
 ````
