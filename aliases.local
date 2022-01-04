@@ -1,4 +1,4 @@
-alias e='vim'
+alias e='mvim'
 alias n='nvim'
 alias sr='./bin/local_server'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -7,6 +7,8 @@ alias gd='g diff'
 alias gc='g co'
 alias server="python -m SimpleHTTPServer 8000"
 alias ll="ls -lah"
+alias kc='kubectl'
+alias tm='~/tmux.sh'
 
 # Docker
 alias dk='docker'
@@ -18,7 +20,7 @@ alias kr='pkill -9 rails; pkill -9 ruby'
 
 # GO migrate
 # alias mg='migrate -url postgres://saucony_admin:sauconyrocks@localhost:5432/saucony?sslmode=disable -path ./database/migrations'
-alias mg='migrate -database postgres://pm_auction_admin:zmwXPXDM7UGkKCDDHKdwu8py4wxxPnRx@localhost:5432/pm_auction?sslmode=disable -path ./migrations'
+# alias mg='migrate -database postgres://pm_auction_admin:zmwXPXDM7UGkKCDDHKdwu8py4wxxPnRx@localhost:5432/pm_auction?sslmode=disable -path ./migrations'
 
 alias rm_ds="find . -name '.DS_Store' -type f -delete"
 alias todos='fgrep -rn "TODO:" app config spec | while read -r line ; do

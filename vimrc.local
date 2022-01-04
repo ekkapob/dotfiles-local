@@ -5,8 +5,9 @@ set number relativenumber
 set pyxversion=3
 set encoding=utf-8
 
-syntax on
-" colorscheme onedark
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
+syntax enable
 color dracula
 
 " Leader
@@ -85,10 +86,10 @@ nnoremap <silent> <C-j> :<C-u>call <SID>JumpWithCreate('j')<CR>
 nnoremap <silent> <C-k> :<C-u>call <SID>JumpWithCreate('k')<CR>
 nnoremap <silent> <C-l> :<C-u>call <SID>JumpWithCreate('l')<CR>
 
-nnoremap <silent> <S-h> :exe "vertical resize +5"<CR>
-nnoremap <silent> <S-l> :exe "vertical resize -5"<CR>
-nnoremap <silent> <S-k> :exe "resize +5"<CR>
-nnoremap <silent> <S-j> :exe "resize -5"<CR>
+" nnoremap <silent> <S-h> :exe "vertical resize +5"<CR>
+" nnoremap <silent> <S-l> :exe "vertical resize -5"<CR>
+" nnoremap <silent> <S-k> :exe "resize +5"<CR>
+" nnoremap <silent> <S-j> :exe "resize -5"<CR>
 
 " bind K to grep word under cursor
 " nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -139,3 +140,6 @@ function! s:find_git_root()
 endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <C-p> :ProjectFiles<CR>
+
+
+" noremap <Leader>f :Rg! 

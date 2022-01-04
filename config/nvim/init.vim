@@ -24,27 +24,6 @@ set noswapfile
 set splitbelow
 set splitright
 
-call plug#begin()
-
-Plug 'neomake/neomake'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'jiangmiao/auto-pairs'
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-Plug 'mattn/emmet-vim'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-
-call plug#end()
-
 syntax on
 colorscheme dracula
 
