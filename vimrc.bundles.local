@@ -12,8 +12,9 @@ Plug 'mxw/vim-jsx'
 Plug 'honza/vim-snippets'
 Plug 'mfukar/robotframework-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
-"
+
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " use this only when post-hook failed
@@ -50,9 +51,8 @@ let g:rustfmt_autosave = 1
 let g:rustfmt_tab_spaces = 2
 
 highlight ExtraWhitespace ctermbg=red guibg=red
-highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-match ExtraWhitespace /\s\+$\| \+\ze\t/
+match ExtraWhitespace /\s\+$/
+
 
 let g:ale_enabled = 0
 

@@ -17,6 +17,7 @@ export PATH=$PATH:$GOPATH/bin:$HOME/.cargo/bin
 export PATH=$HOME/.rbenv/shims:$PATH
 
 export GOPRJ=$GOPATH/src/github.com/ekkapob/maneechan
+export GOBIN=/usr/local/bin
 # export GOPRJ=$GOPATH/src/eggdigital.com/qrpayment
 
 # export PATH="/usr/local/opt/node@8/bin:$PATH"
@@ -50,3 +51,5 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+source "$HOME"/.gvm/scripts/gvm
