@@ -142,4 +142,4 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <C-p> :ProjectFiles<CR>
 
 
-" noremap <Leader>f :Rg! 
+" noremap <Leader>f :Rg!

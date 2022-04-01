@@ -90,3 +90,9 @@ http://blog.paulrugelhiatt.com/hacks/apple/2014/11/06/optimize-osx-keymappings-f
 $ brew install neovim
 $ pip3 install pynvim
 ```
+
+#### NVIM
+After intalled NVIM, apply below command
+```
+$ ln -s ~/dotfiles-local/nvim ~/.config/nvim
+```
