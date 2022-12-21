@@ -35,7 +35,8 @@ Plug 'epilande/vim-react-snippets'
 " endif
 
 " set completeopt+=noselect
-set completeopt-=preview
+" set completeopt-=preview
+set completeopt=longest,menuone
 " let g:deoplete#enable_at_startup = 1
 
 " deoplete-go settings
@@ -62,3 +63,8 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..', 'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}, <bang>0)
 
 set ttimeoutlen=100
+
+" ref:
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+

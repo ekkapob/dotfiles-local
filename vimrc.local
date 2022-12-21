@@ -141,5 +141,7 @@ endfunction
 command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <C-p> :ProjectFiles<CR>
 
+nnoremap <Leader>r :GoBuildTags ''<CR>
+
 
 " noremap <Leader>f :Rg!

@@ -5,7 +5,7 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias glr="gl --tags --branches --remotes"
 alias gd='g diff'
 alias gc='g co'
-alias server="python -m SimpleHTTPServer 8000"
+alias server="python -m http.server 8000"
 alias ll="ls -lah"
 alias kc='kubectl'
 alias tm='~/tmux.sh'

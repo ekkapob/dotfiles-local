@@ -24,10 +24,10 @@ set ignorecase
 set smartcase
 set incsearch
 
-let g:go_doc_keywordprg_enabled = 0
+" let g:go_doc_keywordprg_enabled = 0
 
 " set mouse selection excluding line numbers
-set mouse+=a
+" set mouse+=a
 
 " yank to copy to clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
