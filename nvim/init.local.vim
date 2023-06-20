@@ -27,7 +27,10 @@ set incsearch
 " let g:go_doc_keywordprg_enabled = 0
 
 " set mouse selection excluding line numbers
-" set mouse+=a
+set mouse+=a
+vmap <C-C> "+y
 
 " yank to copy to clipboard
 " set clipboard=unnamed
+"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"

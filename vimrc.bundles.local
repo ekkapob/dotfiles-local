@@ -49,6 +49,7 @@ au filetype go inoremap <buffer> . .<C-x><C-o>
 
 let g:go_fmt_command = "goimports"
 
+" let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 1
 let g:rustfmt_tab_spaces = 2
 
@@ -68,3 +69,7 @@ set ttimeoutlen=100
 " https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
